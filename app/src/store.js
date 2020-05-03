@@ -11,6 +11,7 @@ const store = new Vuex.Store({
   state: {
     message: '初期メッセージ',
     lineId: null,
+    mainLineId: null,
     subLineId: null,
     dialogFlag : false,
     dialogData : {},
@@ -25,6 +26,9 @@ const store = new Vuex.Store({
     },
     lineId(state) {
       return state.lineId
+    },
+    mainLineId(state) {
+      return state.mainLineId
     },
     subLineId(state) {
       return state.subLineId
@@ -51,6 +55,9 @@ const store = new Vuex.Store({
     setLineId(state, payload){
       state.lineId = payload.lineId
     },
+    setMainLineId(state, payload){
+      state.mainLineId = payload.mainLineId
+    },
     setSubLineId(state, payload){
       state.subLineId = payload.subLineId
     },
@@ -72,6 +79,9 @@ const store = new Vuex.Store({
     },
     setLineId({commit}, lineId){
       commit('setLineId',{lineId})
+    },
+    setMainLineId({commit}, mainLineId){
+      commit('setMainLineId',{mainLineId})
     },
     setSubLineId({commit}, subLineId){
       commit('setSubLineId',{subLineId})
